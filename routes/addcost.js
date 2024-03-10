@@ -22,6 +22,7 @@ router.post('/addcost', async (req, res) => {
             month,
             day,
             description,
+            id,
             category,
             sum
         });
