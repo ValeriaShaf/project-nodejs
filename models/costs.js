@@ -24,7 +24,12 @@ const CostsSchema = new Schema({
         required: true
     },
     id:{
-        type: mongoose.Types.ObjectId,
+        type: Number, // Assuming you want to store the ObjectId as a number
+        
+        default: function() {
+            // Generate a new ObjectId and convert it to a number
+            return new Date().valueOf();
+        }
         
     },
     category: {
