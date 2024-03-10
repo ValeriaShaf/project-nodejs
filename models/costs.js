@@ -24,7 +24,7 @@ const CostsSchema = new Schema({
         required: true
     },
     id:{
-        type: mongoose.Types.ObjectId(),
+        type: mongoose.Types.ObjectId,
         required: true
     },
     category: {
