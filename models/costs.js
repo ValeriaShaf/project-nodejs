@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const CostsSchema = new Schema({
+    
     user_id: {
         type: Number,
         required: true
@@ -22,6 +23,10 @@ const CostsSchema = new Schema({
         type: String,
         required: true
     },
+    id:{
+        type: mongoose.Types.ObjectId(),
+        required: true
+    },
     category: {
         type: String,
         enum: ['food', 'health', 'housing', 'sport', 'education', 'transportation', 'other'],
@@ -32,7 +37,7 @@ const CostsSchema = new Schema({
         type: Number,
         required: true
     },
-});
+},{versionKey:false});
 
 const Cost = mongoose.model('costs',CostsSchema);
 
