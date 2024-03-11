@@ -24,12 +24,8 @@ const CostsSchema = new Schema({
         required: true
     },
     id:{
-        type: Number, // Assuming you want to store the ObjectId as a number
-        
-        default: function() {
-            // Generate a new ObjectId and convert it to a number
-            return new Date().valueOf();
-        }
+        type: String, // Assuming you want to store the ObjectId as a number
+        unique: true
         
     },
     category: {

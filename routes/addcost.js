@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Cost = require('../models/costs'); // Importing the Cost model
 const mongoose = require('mongoose');
+const uuid = require('uuid');
 
 // Endpoint for adding a new cost item using the POST method
 router.post('/addcost', async (req, res) => {
@@ -14,6 +15,8 @@ router.post('/addcost', async (req, res) => {
         if (!availableCategories.includes(category)) {
             return res.status(400).json({ error: 'Invalid category' });
         }
+
+        const id = uuid.v4();
 
         // Create a new cost item
         const newCost = new Cost({
