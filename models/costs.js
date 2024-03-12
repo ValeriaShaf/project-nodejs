@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// creating new mongo schema for the costs
 const CostsSchema = new Schema({
     
     user_id: {
@@ -24,7 +25,7 @@ const CostsSchema = new Schema({
         required: true
     },
     id:{
-        type: String, // Assuming you want to store the ObjectId as a number
+        type: String, 
         unique: true
         
     },

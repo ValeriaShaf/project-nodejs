@@ -3,6 +3,7 @@ const router = express.Router();
 const Cost = require('../models/costs'); // Importing the Cost model
 const mongoose = require('mongoose');
 
+// getting the costs report using the GET method
 router.get('/report', async (req, res) => {
     try {
         // Extract parameters from the request query
@@ -22,7 +23,7 @@ router.get('/report', async (req, res) => {
             other: []
         };
 
-        // Iterate through the retrieved cost items and categorize them
+        // Go through the obtained cost items and organize them into categories
         costs.forEach(cost => {
             report[cost.category].push({
                 day: cost.day,

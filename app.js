@@ -5,18 +5,18 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 
-
+// importing route handlers for different endpoints
 var indexRouter = require('./routes/index');
 var apiRouter = require('./routes/api');
 var aboutRouter = require('./routes/about');
 var addcostRouter = require('./routes/addcost');
 var reportRouter = require('./routes/report');
 
-var app = express();
+var app = express(); // initializing Express application instance
 
-mongoose.set('strictQuery', true);
+mongoose.set('strictQuery', true);  // setting Mongoose option to enforce strict query behavior
 
-mongoose.connect('mongodb+srv://valeshafran:Vale159753@cluster0.qlivswf.mongodb.net/')
+mongoose.connect('mongodb+srv://valeshafran:Vale159753@cluster0.qlivswf.mongodb.net/') // connection to MongoDB
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,6 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Mounts each router to handle requests at specific paths
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
 app.use('/',aboutRouter);
