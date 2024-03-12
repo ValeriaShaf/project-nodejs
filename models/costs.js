@@ -1,3 +1,6 @@
+//Valeria Shafran 320954258
+//Einav Kogut 318902285
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 

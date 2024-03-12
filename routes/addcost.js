@@ -1,3 +1,6 @@
+//Valeria Shafran 320954258
+//Einav Kogut 318902285
+
 const express = require('express');
 const router = express.Router();
 const Cost = require('../models/costs');
@@ -10,6 +13,11 @@ router.post('/addcost', async (req, res) => {
         // Extract parameters from the request body
         const { user_id, year, month, day, description, category, sum } = req.body;
 
+        // Check if any required parameter is missing
+        if (!user_id || !year || !month || !day || !description || !category || !sum) {
+            return res.status(400).send({ error: "Missing required parameters" });
+        }
+        
         // Ensure the category is one of the available ones
         const availableCategories = ['food', 'health', 'housing', 'sport', 'education', 'transportation', 'other'];
         if (!availableCategories.includes(category)) {
