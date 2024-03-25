@@ -2,10 +2,10 @@
 //Einav Kogut 318902285
 
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const schema = mongoose.Schema;
 
 // creating new mongo schema for the users
-const UsersSchema = new Schema({
+const usersSchema = new schema({
     id: {
         type: Number,
         required: true
@@ -28,7 +28,7 @@ const UsersSchema = new Schema({
 
 },{versionKey:false});
 
-const User = mongoose.model('users',UsersSchema);
+const user = mongoose.model('users',usersSchema);
 
-module.exports = User;
+module.exports = user;
 

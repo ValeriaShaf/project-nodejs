@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Cost = require('../models/costs'); // Importing the Cost model
+const cost = require('../models/costs'); // Importing the Cost model
 const mongoose = require('mongoose');
 
 router.get('/costs',
@@ -23,7 +23,7 @@ router.post('/costs',
 
 
     function(req,res,next){
-        const promise1 = Cost.create(req.body);
+        const promise1 = cost.create(req.body);
         const promise2 = promise1.then(
 
             function(cost){

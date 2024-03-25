@@ -3,7 +3,7 @@
 
 const express = require('express');
 const router = express.Router();
-const Cost = require('../models/costs'); // Importing the Cost model
+const cost = require('../models/costs'); // Importing the Cost model
 const mongoose = require('mongoose');
 
 // getting the costs report using the GET method
@@ -13,7 +13,7 @@ router.get('/report', async (req, res) => {
         const { user_id, month, year } = req.query;
 
         // Query the database to retrieve all cost items for the specified user, month, and year
-        const costs = await Cost.find({ user_id, month, year });
+        const costs = await cost.find({ user_id, month, year });
 
         // Organize the retrieved cost items into categories
         const report = {

@@ -2,10 +2,10 @@
 //Einav Kogut 318902285
 
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const schema = mongoose.Schema;
 
 // creating new mongo schema for the costs
-const CostsSchema = new Schema({
+const costsSchema = new schema({
     
     user_id: {
         type: Number,
@@ -44,7 +44,7 @@ const CostsSchema = new Schema({
     },
 },{versionKey:false});
 
-const Cost = mongoose.model('costs',CostsSchema);
+const cost = mongoose.model('costs',costsSchema);
 
-module.exports = Cost;
+module.exports = cost;
 
