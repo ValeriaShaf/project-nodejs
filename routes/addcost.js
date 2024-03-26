@@ -14,7 +14,7 @@ router.post('/addcost', async (req, res) => {
         const { user_id, year, month, day, description, category, sum } = req.body;
 
         // Check if any required parameter is missing
-        if (!user_id || !year || !month || !day || !description || !category || !sum) {
+        if (!user_id || !description || !category || !sum) {
             return res.status(400).send({ error: "Missing required parameters" });
         }
         

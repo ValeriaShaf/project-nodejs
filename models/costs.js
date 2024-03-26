@@ -13,14 +13,18 @@ const costsSchema = new schema({
     },
     year: {
         type: Number,
-
+        required: true,
+        default: () => new Date().getFullYear() // Default to current year
     },
     month: {
         type: Number,
-
+        required: true,
+        default: () => new Date().getMonth() + 1 // Default to current month 
     },
     day: {
         type: Number,
+        required: true,
+        default: () => new Date().getDate() // Default to current day of the month
 
     },
     description: {
@@ -30,7 +34,6 @@ const costsSchema = new schema({
     id:{
         type: String, 
         unique: true
-        
     },
     category: {
         type: String,
